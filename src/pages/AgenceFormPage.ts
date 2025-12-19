@@ -116,7 +116,8 @@ export class AgenceFormPage {
     permis: string;
     identite: string;
   }) {
-    await this.uploadAvatar(data.imagePath);
+    await this.avatarInput.setInputFiles(data.imagePath);
+    //await this.uploadAvatar(data.imagePath);
     await this.fillPrenom(data.prenom);
     await this.fillNom(data.nom);
     await this.fillNomAgence(data.nomAgence);

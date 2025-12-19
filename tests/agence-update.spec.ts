@@ -9,7 +9,8 @@ test('Mise à jour', async ({ page }) => {
   const loginPass = "superadmin@krihani@2024";
 
   const agenceData = {
-    imagePath: 'D:/visual_code/playwright_rakib/rakib_dashboard/data/2.jpg',
+    imagePath: 'data/2.jpg',
+    //imagePath: 'D:/visual_code/playwright_rakib/rakib_dashboard/data/2.jpg',
     prenom: "nabil",
     nom: "boukhsim",
     nomAgence: "Agence Alami & Co",
