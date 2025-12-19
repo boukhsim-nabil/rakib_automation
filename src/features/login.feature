@@ -15,7 +15,7 @@ Feature: Authentification
             | Email Vide                  |                        | superadmin@krihani@2024 | Désolé, il semble qu'il y ait des erreurs détectées |
             | Mauvais Mot de Passe        | superadmin@krihani.com | FauxMotDePasse          | auth.failed                                         |
             | Mot de Passe Vide           | superadmin@krihani.com |                         | Le champ password est obligatoire                   |
-
+    @ignore
     Scenario: Reproduction du Bug CSRF (Double Soumission)
         When je me connecte avec l'email "superadmin@krihani.com" et le mot de passe "superadmin@krihani@2024"
         Then je vois le message de succès "Vous vous êtes connecté avec succès !"

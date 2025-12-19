@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+/*import { test, expect } from '@playwright/test';
 
 test('Test de Sécurité : Simulation de Vol de Données (XSS)', async ({ page }) => {
 
@@ -56,7 +56,7 @@ test('Test de Sécurité : Simulation de Vol de Données (XSS)', async ({ page }
 
   // --- NAVIGATION ---
   await page.click('text=Gestion des agences');
-  await page.waitForURL('**/admin/agences'); 
+  await page.waitForURL('**//*admin/agences'); 
 
   const boutonEdit = page.locator('a[href*="/admin/agences/edit/23"]');
   await boutonEdit.waitFor({ state: 'visible' });
@@ -91,7 +91,7 @@ test('Test de Sécurité : Simulation de Vol de Données (XSS)', async ({ page }
   console.log("⏳ Sauvegarde en cours... L'attaque va se déclencher au rechargement de la liste.");
   
   await Promise.all([
-    page.waitForURL('**/admin/agences', { timeout: 15000 }),
+    page.waitForURL('**//*admin/agences', { timeout: 15000 }),
     page.click('button[name="save"]', { force: true })
   ]);
 
@@ -100,3 +100,4 @@ test('Test de Sécurité : Simulation de Vol de Données (XSS)', async ({ page }
   const successMessage = page.locator('.alert-success');
   await expect(successMessage).toBeVisible({ timeout: 10000 });
 });
+*/

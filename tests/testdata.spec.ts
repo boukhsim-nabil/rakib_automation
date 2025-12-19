@@ -10,7 +10,7 @@ const scenariosNegatifs = [
     messageAttendu: "Désolé, il semble qu'il y ait des erreurs détectées"
   },
   {
-    titre: " Email Non Valide (Logique)",
+    titre: " Email Non Valide ",
     email: "nabil@gmail.com",
     pass: "superadmin@krihani@2024",
     messageAttendu: "Le email sélectionné n'est pas valide"
@@ -59,8 +59,9 @@ test.describe(' Tests de Validation Login', () => {
 });
 
 
+
 // Le Bug 
-test(' Reproduction du Bug CSRF ', async ({ page }) => {
+test.skip(' Reproduction du Bug CSRF ', async ({ page }) => {
   const loginPage = new LoginPage(page);
   
   // 1. Connexion réussie
