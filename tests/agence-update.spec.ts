@@ -3,9 +3,11 @@ import { LoginPage } from '../src/pages/LoginPage';
 import { AgencesPage } from '../src/pages/AgencesPage';
 import { AgenceFormPage } from '../src/pages/AgenceFormPage';
 
+import donnees from '../data/testData.json';
+
 test('Mise à jour', async ({ page }) => {
   // Données de test
-  const loginEmail = "superadmin@krihani.com";
+ /* const loginEmail = "superadmin@krihani.com";
   const loginPass = "superadmin@krihani@2024";
 
   const agenceData = {
@@ -19,21 +21,20 @@ test('Mise à jour', async ({ page }) => {
     prefix: "212",
     telephone: "600000000",
     adresse: "123 Boulevard Mohamed V",
-    ville: "rabat",
+    ville: "rabat", 
     nationalite: "mexicaine",
     dateNaissance: "2050-01-01", // ici il yq un bug
     permis: "B-123456",
     identite: "skjgrighriughsri" // ici il y a un bug
   };
-
+*/
   // Initialisation des pages
   const loginPage = new LoginPage(page);
   const agencesPage = new AgencesPage(page);
   const agenceFormPage = new AgenceFormPage(page);
 
   // Login
-  await loginPage.login(loginEmail, loginPass);
-
+  await loginPage.login(donnees.login.email, donnees.login.password);
   // Navigation vers les agences
   await agencesPage.navigateToAgences();
 
@@ -41,8 +42,7 @@ test('Mise à jour', async ({ page }) => {
   await agencesPage.clickEditAgence('23');
 
   // Remplir tout
-  await agenceFormPage.fillCompleteForm(agenceData);
-
+  await agenceFormPage.fillCompleteForm(donnees.agenceModification);
   // Sauvegarder
   await agenceFormPage.clickSave();
 

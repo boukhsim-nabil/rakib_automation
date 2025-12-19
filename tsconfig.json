@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    
+    // 👇 C'est LIGNE MAGIQUE qui autorise l'import du JSON
+    "resolveJsonModule": true,
+    
+    // Celle-ci permet de faire "import" au lieu de "require"
+    "esModuleInterop": true,
+    
+    // On reste souple pour ne pas bloquer ton code actuel
+    "strict": false,
+    "noImplicitAny": false
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts", "playwright.config.ts"]
+}

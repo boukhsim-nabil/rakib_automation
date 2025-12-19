@@ -1,5 +1,24 @@
 import { Page, Locator } from '@playwright/test';
 
+
+export interface AgenceData {
+    imagePath: string;
+    prenom: string;
+    nom: string;
+    nomAgence: string;
+    ice: string;
+    email: string;
+    prefix: string;
+    telephone: string;
+    adresse: string;
+    ville: string;
+    nationalite: string;
+    dateNaissance: string;
+    permis: string;
+    identite: string;
+}
+
+
 export class AgenceFormPage {
   readonly page: Page;
   readonly avatarInput: Locator;
@@ -99,7 +118,7 @@ export class AgenceFormPage {
     await this.saveButton.click();
     await this.page.waitForURL('**/admin/agences', { timeout: 15000 });
   }
-
+/*
   async fillCompleteForm(data: {
     imagePath: string;
     prenom: string;
@@ -131,4 +150,23 @@ export class AgenceFormPage {
     await this.fillNumeroPermis(data.permis);
     await this.fillNumeroIdentite(data.identite);
   }
+}*/
+
+async fillCompleteForm(data: AgenceData) {
+        // J'ai enlevé la ligne commentée pour nettoyer
+        await this.avatarInput.setInputFiles(data.imagePath);
+        
+        await this.fillPrenom(data.prenom);
+        await this.fillNom(data.nom);
+        await this.fillNomAgence(data.nomAgence);
+        await this.fillIce(data.ice);
+        await this.fillEmail(data.email);
+        await this.fillPhone(data.prefix, data.telephone);
+        await this.fillAdresse(data.adresse);
+        await this.fillVille(data.ville);
+        await this.selectNationalite(data.nationalite);
+        await this.fillDateNaissance(data.dateNaissance);
+        await this.fillNumeroPermis(data.permis);
+        await this.fillNumeroIdentite(data.identite);
+    }
 }

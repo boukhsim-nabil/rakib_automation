@@ -1,0 +1,54 @@
+{
+  "login": {
+    "email": "superadmin@krihani.com",
+    "password": "superadmin@krihani@2024"
+  },
+  "agenceModification": {
+    "imagePath": "data/2.jpg",
+    "prenom": "nabil",
+    "nom": "boukhsim",
+    "nomAgence": "Agence Alami & Co",
+    "ice": "123123123456",
+    "email": "youssef.alami@agence.com",
+    "prefix": "212",
+    "telephone": "600000000",
+    "adresse": "123 Boulevard Mohamed V",
+    "ville": "rabat",
+    "nationalite": "mexicaine",
+    "dateNaissance": "2050-01-01",
+    "permis": "B-123456",
+    "identite": "skjgrighriughsri"
+  },
+  "scenariosNegatifs": [
+    {
+      "titre": "Format Email Incorrect",
+      "email": "wjnrhihwrp",
+      "pass": "superadmin@krihani@2024",
+      "messageAttendu": "Désolé, il semble qu'il y ait des erreurs détectées"
+    },
+    {
+      "titre": "Email Non Valide",
+      "email": "nabil@gmail.com",
+      "pass": "superadmin@krihani@2024",
+      "messageAttendu": "Le email sélectionné n'est pas valide"
+    },
+    {
+      "titre": "Email Vide",
+      "email": "",
+      "pass": "superadmin@krihani@2024",
+      "messageAttendu": "Désolé, il semble qu'il y ait des erreurs détectées"
+    },
+    {
+      "titre": "Mauvais Mot de Passe",
+      "email": "superadmin@krihani.com",
+      "pass": "FauxMotDePasse",
+      "messageAttendu": "auth.failed"
+    },
+    {
+      "titre": "Mot de Passe Vide",
+      "email": "superadmin@krihani.com",
+      "pass": "",
+      "messageAttendu": "Le champ password est obligatoire"
+    }
+  ]
+}
